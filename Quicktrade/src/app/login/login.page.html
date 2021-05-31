@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            {{title}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-row style="height: 7px"></ion-row>
+    <ion-item>
+        <h5 align="left">{{title2}}</h5>
+    </ion-item>
+    <ion-row style="height: 7px"></ion-row>
+    <ion-item>
+        <ion-input type="text" color="light" placeholder="Enter your user name, please" [(ngModel)]="userName"
+                   (ionChange)="userName"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="password" color="light" placeholder="Enter your password, please"></ion-input>
+    </ion-item>
+    <div id="space-Buttons">
+        <ion-button (click)="show()" [routerLink]="['/home', this.id]" routerDirection="forward">LOGIN</ion-button>
+    </div>
+</ion-content>

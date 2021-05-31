@@ -1,0 +1,25 @@
+ion-input {
+  --background: rgba(255, 255, 255, 1);
+  border-radius: 13px;
+  --placeholder-color: rgb(255, 0, 0);
+  --placeholder-opacity: 1;
+}
+
+ion-segment-button {
+  --color: rgba(255, 255, 255, 1);
+  --color-checked: rgb(255, 0, 0);
+}
+
+ion-button {
+
+  --background: rgb(255, 0, 0);
+}
+
+ion-button:hover {
+  --background: rgb(255, 90, 54);
+}
+
+#space-Buttons {
+  justify-content: space-between;
+  display: flex;
+}

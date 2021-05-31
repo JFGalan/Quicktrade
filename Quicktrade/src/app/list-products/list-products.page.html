@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>List of Products</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <h5 align="center">VEHICLES</h5>
+    <ion-card *ngFor="let item of vehicles">
+        <ion-card-header>
+            <ion-card-title>
+                {{item.type}}: {{item.name}}
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-subtitle align="right">
+            <ion-button [routerLink]="['/details-vehicles',item.key]" routerDirection="forward">DETAILS</ion-button>
+        </ion-card-subtitle>
+    </ion-card>
+    <h5 align="center">REAL STATE</h5>
+    <ion-card *ngFor="let item of houses">
+        <ion-card-header>
+            <ion-card-title>Location: {{item.location}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-subtitle align="right">
+            <ion-button [routerLink]="['/details-real-state',item.key]" routerDirection="forward">DETAILS</ion-button>
+        </ion-card-subtitle>
+    </ion-card>
+    <h5 align="center">TECHNOLOGY</h5>
+    <ion-card *ngFor="let item of techn">
+        <ion-card-header>
+            <ion-card-title>
+                Product: {{item.name}}
+            </ion-card-title>
+            <ion-card-subtitle align="right">
+                <ion-button [routerLink]="['/details-technology',item.key]" routerDirection="forward">DETAILS</ion-button>
+            </ion-card-subtitle>
+        </ion-card-header>
+    </ion-card>
+</ion-content>

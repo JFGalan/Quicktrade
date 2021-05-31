@@ -1,0 +1,52 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+ion-input {
+  --background: rgba(255, 255, 255, 1);
+  border-radius: 13px;
+  --placeholder-color: rgb(255, 0, 0);
+  --placeholder-opacity: 1;
+}
+
+ion-segment-button {
+  --color: rgba(255, 255, 255, 1);
+  --color-checked: rgb(255, 0, 0);
+}
+
+ion-button {
+
+  --background: rgb(255, 0, 0);
+}
+
+ion-button:hover {
+  --background: rgb(255, 90, 54);
+}
+
+#space-Buttons {
+  justify-content: space-between;
+  display: flex;
+}

@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            {{title}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-row style="height: 7px"></ion-row>
+    <ion-item>
+        <h5 align="left">{{title2}}</h5>
+    </ion-item>
+    <ion-row style="height: 7px"></ion-row>
+    <ion-item>
+        <ion-input type="text" color="light" placeholder="Enter name of product" [(ngModel)]="nameProduct"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="text" color="light" placeholder="Enter a description" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input type="number" color="light" placeholder="Enter price" [(ngModel)]="price"></ion-input>
+    </ion-item>
+    <ion-button expand="block" routerLink="/list-products" routerDirection="forward">List of products</ion-button>
+    <h5 align="center">Select category</h5>
+    <ion-segment>
+        <ion-segment-button value="motor" (click)="change_Hide_Motor()">
+            <ion-label>MOTOR</ion-label>
+            <img [src]="route1" [style.width.px]="width" [style.height.px]="height"/>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-segment-button>
+        <ion-segment-button value="inmobiliaria" (click)="change_Hide_Real_State()">
+            <ion-label>REAL STATE</ion-label>
+            <img [src]="route2" [style.width.px]="width" [style.height.px]="height"/>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-segment-button>
+        <ion-segment-button value="tecnologia" (click)=" change_Hide_Tech()">
+            <ion-label>TECHNOLOGY</ion-label>
+            <img [src]="route3" [style.width.px]="width" [style.height.px]="height"/>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-segment-button>
+    </ion-segment>
+    <ion-row style="height: 7px"></ion-row>
+    <div *ngIf="hide_Motor == false">
+        <ion-row style="height: 7px"></ion-row>
+        <h5 align="center">MOTOR</h5>
+        <ion-item>
+            <ion-label>Option checked</ion-label>
+            <ion-select placeholder="Vehicles" [(ngModel)]="type">
+                <ion-select-option value="Car">Car</ion-select-option>
+                <ion-select-option value="Motorbike">Motorbike</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-row style="height: 7px"></ion-row>
+            <ion-input type="number" color="light" placeholder="Enter kilometers" [(ngModel)]="kilometers"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-row style="height: 7px"></ion-row>
+            <ion-input type="number" color="light" placeholder="Enter year" [(ngModel)]="yearProduct"></ion-input>
+        </ion-item>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <div id="space-Buttons">
+            <ion-button (click)="insertVehicles()">{{text_Button}}</ion-button>
+        </div>
+    </div>
+    <div *ngIf="hide_Real_State == false">
+        <ion-row style="height: 7px"></ion-row>
+        <h5 align="center">REAL STATE</h5>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-item>
+            <ion-input type="number" color="light"
+                       placeholder="Introduce the square meters of the house" [(ngModel)]="sqareMeters"></ion-input>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" color="light"
+                       placeholder="Enter the bathrooms and rooms of the house" [(ngModel)]="bathRooms"></ion-input>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-input type="text" color="light"
+                       placeholder="Enter the locality where the house is located" [(ngModel)]="location"></ion-input>
+            <ion-row style="height: 7px"></ion-row>
+        </ion-item>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <div id="space-Buttons">
+            <ion-button (click)="insertRelState()">{{text_Button}}</ion-button>
+        </div>
+    </div>
+    <div *ngIf="hide_Tech == false">
+        <ion-row style="height: 7px"></ion-row>
+        <h5 align="center">TECHNOLOGY</h5>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-item>
+            <ion-label>Option checked</ion-label>
+            <ion-select placeholder="Condition" [(ngModel)]="state">
+                <ion-select-option value="perfect">In perfect condition</ion-select-option>
+                <ion-select-option value="used">Used</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <ion-row style="height: 7px"></ion-row>
+        <div id="space-Buttons">
+            <ion-button (click)="insertTech()">{{text_Button}}</ion-button>
+        </div>
+    </div>
+</ion-content>
+

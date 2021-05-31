@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h5 align="center">VEHICLES</h5>
+  <ion-card *ngFor="let item of motor">
+    <ion-card-header>
+      <ion-card-title>
+        {{item.type}}: {{item.name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-subtitle id="space-Buttons">
+      <ion-button (click)="deleteProductVehicle(item.id)" routerDirection="forward">DELETE</ion-button>
+      <ion-button [routerLink]="['/edit-vehicles',item.key, item.id]" routerDirection="forward">EDIT</ion-button>
+    </ion-card-subtitle>
+  </ion-card>
+  <h5 align="center">REAL STATE</h5>
+  <ion-card *ngFor="let item of inmo">
+    <ion-card-header>
+      <ion-card-title>Location: {{item.location}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-subtitle id="space-Buttons">
+      <ion-button (click)="deleteProductInmo(item.id)"  routerDirection="forward">DELETE</ion-button>
+      <ion-button [routerLink]="['/edit-real-state',item.key, item.id]" routerDirection="forward">EDIT</ion-button>
+    </ion-card-subtitle>
+  </ion-card>
+  <h5 align="center">TECHNOLOGY</h5>
+  <ion-card *ngFor="let item of tech">
+    <ion-card-header>
+      <ion-card-title>
+        Product: {{item.name}}
+      </ion-card-title>
+      <ion-card-subtitle id="space-Buttons">
+        <ion-button (click)="deleteProductTech(item.id)" routerDirection="forward">DELETE</ion-button>
+        <ion-button [routerLink]="['/edit-tech',item.key, item.id]" routerDirection="forward">EDIT</ion-button>
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

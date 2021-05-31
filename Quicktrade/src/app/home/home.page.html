@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            {{title}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" align="center">
+    <ion-button expand="block" [routerLink]="['/insert-products', this.id]" routerDirection="forward">Insert products</ion-button>
+    <ion-button expand="block" routerLink="/list-products" routerDirection="forward">List of products</ion-button>
+    <ion-button expand="block" [routerLink]="['/my-products', this.id]" routerDirection="forward">My products</ion-button>
+</ion-content>
